@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Crash Kurs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #232323; color: #f8f8f8; margin: 0; padding: 0;}
+        header { background: #5C258D; color: #fff; padding: 2em 1em; text-align: center; }
+        main { max-width: 850px; margin: 2em auto; background: #181818; padding: 2em; border-radius: 10px; box-shadow: 0 4px 16px rgba(92,37,141,0.15);}
+        h1, h2 { color: #B57EDC; }
+        h2 { border-bottom: 1px solid #393939; padding-bottom: .3em; }
+        pre { background: #2c2c2c; color: #fff; padding: 1em; border-radius: 8px; overflow-x: auto; }
+        code { background: #393939; padding: 2px 4px; border-radius: 4px; }
+        a { color: #B57EDC; }
+        ul { margin-bottom: 1em; }
+        section { margin-bottom: 2em; }
+        footer { text-align: center; color: #aaa; padding: 1em 0; font-size: .97em;}
+        @media (max-width: 600px) {
+            main { padding: 1em;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Crash Kurs</h1>
+        <p>Die wichtigsten HTML-Elemente und Features auf einen Blick</p>
+    </header>
+    <main>
+        <section>
+            <h2>1. Grundstruktur</h2>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meine Webseite&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Inhalt
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>2. Überschriften &amp; Text</h2>
+            <ul>
+                <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> bis <code>&lt;h6&gt;...&lt;/h6&gt;</code>: Überschriften</li>
+                <li><code>&lt;p&gt;...&lt;/p&gt;</code>: Absatz</li>
+                <li><code>&lt;strong&gt;</code>: Fett <code>&lt;em&gt;</code>: Kursiv</li>
+                <li><code>&lt;br&gt;</code>: Zeilenumbruch</li>
+            </ul>
+            <pre><code>&lt;h1&gt;Hallo Welt!&lt;/h1&gt;
+&lt;p&gt;Das ist ein <strong>Absatz</strong>.&lt;/p&gt;
+&lt;p&gt;Zeile 1&lt;br&gt;Zeile 2&lt;/p&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>3. Links &amp; Bilder</h2>
+            <ul>
+                <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code>: Link</li>
+                <li><code>&lt;img src="..." alt="..."&gt;</code>: Bild</li>
+            </ul>
+            <pre><code>&lt;a href="https://example.com"&gt;Zur Webseite&lt;/a&gt;
+&lt;img src="bild.jpg" alt="Mein Bild"&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>4. Listen</h2>
+            <ul>
+                <li><code>&lt;ul&gt;</code>: Ungeordnete Liste</li>
+                <li><code>&lt;ol&gt;</code>: Geordnete Liste</li>
+                <li><code>&lt;li&gt;</code>: Listenelement</li>
+            </ul>
+            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Erstes Element&lt;/li&gt;
+  &lt;li&gt;Zweites Element&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>5. Tabellen</h2>
+            <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Alter&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Max&lt;/td&gt;
+    &lt;td&gt;21&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>6. Formulare</h2>
+            <pre><code>&lt;form&gt;
+  &lt;label&gt;Name:&lt;input type="text" name="name"&gt;&lt;/label&gt;
+  &lt;input type="submit" value="Absenden"&gt;
+&lt;/form&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>7. Kommentare &amp; Attribute</h2>
+            <ul>
+                <li><code>&lt;!-- Das ist ein Kommentar --&gt;</code></li>
+                <li><code>src</code>, <code>href</code>, <code>alt</code>, <code>class</code>, <code>id</code> sind wichtige Attribute.</li>
+            </ul>
+            <pre><code>&lt;img src="logo.png" alt="Logo" width="200"&gt;</code></pre>
+        </section>
+        <section>
+            <h2>8. Einbindung von CSS &amp; JavaScript</h2>
+            <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>9. Beispiel: Komplette Mini-Webseite</h2>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mini-Webseite&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Crashkurs HTML&lt;/h1&gt;
+    &lt;p&gt;HTML ist einfach zu lernen!&lt;/p&gt;
+    &lt;a href="https://www.w3schools.com"&gt;Mehr lernen&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </section>
+        <section>
+            <h2>10. Weitere Ressourcen</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML-Tutorial</a></li>
+                <li><a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank">MDN Web Docs: HTML</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 HTML Crash Kurs | GitHub Copilot Chat Assistant
+    </footer>
+</body>
+</html>
