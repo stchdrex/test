@@ -2,19 +2,21 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Crash Kurs</title>
+    <title>HTML Crash Kurs für Anfänger</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #232323; color: #f8f8f8; margin: 0; padding: 0;}
         header { background: #5C258D; color: #fff; padding: 2em 1em; text-align: center; }
-        main { max-width: 850px; margin: 2em auto; background: #181818; padding: 2em; border-radius: 10px; box-shadow: 0 4px 16px rgba(92,37,141,0.15);}
+        main { max-width: 950px; margin: 2em auto; background: #181818; padding: 2em; border-radius: 10px; box-shadow: 0 4px 16px rgba(92,37,141,0.15);}
         h1, h2 { color: #B57EDC; }
         h2 { border-bottom: 1px solid #393939; padding-bottom: .3em; }
         pre { background: #2c2c2c; color: #fff; padding: 1em; border-radius: 8px; overflow-x: auto; }
         code { background: #393939; padding: 2px 4px; border-radius: 4px; }
         a { color: #B57EDC; }
-        ul { margin-bottom: 1em; }
+        ul, ol { margin-bottom: 1em; }
         section { margin-bottom: 2em; }
+        .tip, .hilfe { background: #393939; color: #B57EDC; padding: 0.8em; border-radius: 6px; margin-bottom: 1em; }
+        .kommentar { color: #70cfff; font-style: italic; }
         footer { text-align: center; color: #aaa; padding: 1em 0; font-size: .97em;}
         @media (max-width: 600px) {
             main { padding: 1em;}
@@ -23,122 +25,191 @@
 </head>
 <body>
     <header>
-        <h1>HTML Crash Kurs</h1>
-        <p>Die wichtigsten HTML-Elemente und Features auf einen Blick</p>
+        <h1>HTML Crash Kurs für Anfänger</h1>
+        <p>Schritt-für-Schritt Anleitung, ausführliche Erklärungen, Kommentare und Tipps</p>
     </header>
     <main>
         <section>
-            <h2>1. Grundstruktur</h2>
-            <pre><code>&lt;!DOCTYPE html&gt;
+            <h2>1. Was ist HTML?</h2>
+            <p>
+                <strong>HTML</strong> steht für <em>HyperText Markup Language</em> und ist das Grundgerüst jeder Webseite. HTML sagt dem Browser, was angezeigt werden soll – z.B. Überschriften, Text, Bilder, Listen oder Links.
+            </p>
+            <div class="hilfe">
+                <strong>Für Einsteiger:</strong> HTML ist keine Programmiersprache! Es beschreibt nur die Struktur deiner Inhalte. Man nennt HTML auch „Auszeichnungssprache“.
+            </div>
+        </section>
+        <section>
+            <h2>2. Wie schreibe ich HTML?</h2>
+            <ol>
+                <li>Öffne einen einfachen Texteditor (z.B. Notepad, VS Code, Atom).</li>
+                <li>Speichere deine Datei als <code>index.html</code>.</li>
+                <li>Schreibe HTML-Code hinein und speichere ab.</li>
+                <li>Öffne die Datei durch Doppelklick im Browser und sieh dir das Ergebnis an.</li>
+            </ol>
+            <div class="tip">
+                <strong>Tipp:</strong> Mit <code>Rechtsklick &gt; Öffnen mit</code> kannst du die Datei gezielt im Browser starten.
+            </div>
+        </section>
+        <section>
+            <h2>3. Grundstruktur einer HTML-Seite</h2>
+            <p>Jede HTML-Seite braucht einen festen Aufbau. Kommentare sind im Beispiel eingebaut:</p>
+            <pre>
+<span class="kommentar">&lt;!-- Grundstruktur: Kopiere dies in deine index.html --&gt;</span>
+&lt;!DOCTYPE html&gt; <span class="kommentar">&lt;!-- Sagt dem Browser, dass es HTML5 ist --&gt;</span>
 &lt;html lang="de"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Meine Webseite&lt;/title&gt;
+  &lt;head&gt; <span class="kommentar">&lt;!-- Kopfbereich: hier stehen Metadaten --&gt;</span>
+    &lt;meta charset="UTF-8"&gt; <span class="kommentar">&lt;!-- Zeichensatz: Umlaute &amp; Sonderzeichen --&gt;</span>
+    &lt;title&gt;Meine erste Webseite&lt;/title&gt; <span class="kommentar">&lt;!-- Titel im Browser-Tab --&gt;</span>
   &lt;/head&gt;
-  &lt;body&gt;
-    Inhalt
+  &lt;body&gt; <span class="kommentar">&lt;!-- Hier kommt alles, was du sehen willst --&gt;</span>
+    <!-- DEIN INHALT -->
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</pre>
         </section>
         <section>
-            <h2>2. Überschriften &amp; Text</h2>
-            <ul>
-                <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> bis <code>&lt;h6&gt;...&lt;/h6&gt;</code>: Überschriften</li>
-                <li><code>&lt;p&gt;...&lt;/p&gt;</code>: Absatz</li>
-                <li><code>&lt;strong&gt;</code>: Fett <code>&lt;em&gt;</code>: Kursiv</li>
-                <li><code>&lt;br&gt;</code>: Zeilenumbruch</li>
-            </ul>
-            <pre><code>&lt;h1&gt;Hallo Welt!&lt;/h1&gt;
-&lt;p&gt;Das ist ein <strong>Absatz</strong>.&lt;/p&gt;
-&lt;p&gt;Zeile 1&lt;br&gt;Zeile 2&lt;/p&gt;
-</code></pre>
+            <h2>4. Überschriften &amp; Texte</h2>
+            <p>Nutze Überschriften, um Bereiche deiner Seite zu gliedern. <code>&lt;h1&gt;</code> ist die Hauptüberschrift, <code>&lt;h2&gt;</code> bis <code>&lt;h6&gt;</code> sind Unterüberschriften:</p>
+            <pre>
+&lt;h1&gt;Hallo Welt!&lt;/h1&gt;
+&lt;h2&gt;Mein erster Abschnitt&lt;/h2&gt;
+&lt;p&gt;Das ist ein Absatz. Hier kannst du normalen Text schreiben.&lt;/p&gt;
+&lt;strong&gt;fett&lt;/strong&gt; und &lt;em&gt;kursiv&lt;/em&gt; <span class="kommentar">&lt;!-- Text hervorheben --&gt;</span>
+&lt;br&gt; <span class="kommentar">&lt;!-- Zeilenumbruch --&gt;</span>
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Überschriften helfen Suchmaschinen und erleichtern die Lesbarkeit. Verwende <code>&lt;h1&gt;</code> nur einmal pro Seite!
+            </div>
         </section>
         <section>
-            <h2>3. Links &amp; Bilder</h2>
-            <ul>
-                <li><code>&lt;a href="..."&gt;...&lt;/a&gt;</code>: Link</li>
-                <li><code>&lt;img src="..." alt="..."&gt;</code>: Bild</li>
-            </ul>
-            <pre><code>&lt;a href="https://example.com"&gt;Zur Webseite&lt;/a&gt;
-&lt;img src="bild.jpg" alt="Mein Bild"&gt;
-</code></pre>
+            <h2>5. Bilder &amp; Links</h2>
+            <p>Bilder und Links machen deine Seite lebendig:</p>
+            <pre>
+&lt;a href="https://example.com"&gt;Zur Beispielseite&lt;/a&gt; <span class="kommentar">&lt;!-- Link zu einer anderen Seite --&gt;</span>
+&lt;img src="bild.jpg" alt="Beschreibung"&gt; <span class="kommentar">&lt;!-- Bild einfügen, alt=Text falls Bild fehlt --&gt;</span>
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Lege Bilder im gleichen Ordner ab wie deine index.html oder nutze eine Online-URL.
+            </div>
         </section>
         <section>
-            <h2>4. Listen</h2>
-            <ul>
-                <li><code>&lt;ul&gt;</code>: Ungeordnete Liste</li>
-                <li><code>&lt;ol&gt;</code>: Geordnete Liste</li>
-                <li><code>&lt;li&gt;</code>: Listenelement</li>
-            </ul>
-            <pre><code>&lt;ul&gt;
+            <h2>6. Listen</h2>
+            <p>Listen ordnen deine Inhalte:</p>
+            <pre>
+&lt;ul&gt; <span class="kommentar">&lt;!-- Ungeordnete Liste (Punkte) --&gt;</span>
   &lt;li&gt;Erstes Element&lt;/li&gt;
   &lt;li&gt;Zweites Element&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
+&lt;ol&gt; <span class="kommentar">&lt;!-- Geordnete Liste (Nummern) --&gt;</span>
+  &lt;li&gt;Punkt 1&lt;/li&gt;
+  &lt;li&gt;Punkt 2&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Listen können auch verschachtelt werden – probiere <code>&lt;ul&gt;</code> innerhalb von <code>&lt;li&gt;</code>.
+            </div>
         </section>
         <section>
-            <h2>5. Tabellen</h2>
-            <pre><code>&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Name&lt;/th&gt;
+            <h2>7. Tabellen</h2>
+            <p>Tabellen sind hilfreich für strukturierte Daten:</p>
+            <pre>
+&lt;table&gt; <span class="kommentar">&lt;!-- Tabellen-Anfang --&gt;</span>
+  &lt;tr&gt; <span class="kommentar">&lt;!-- Tabellenreihe --&gt;</span>
+    &lt;th&gt;Name&lt;/th&gt; <span class="kommentar">&lt;!-- Überschrift --&gt;</span>
     &lt;th&gt;Alter&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Max&lt;/td&gt;
+    &lt;td&gt;Max&lt;/td&gt; <span class="kommentar">&lt;!-- Tabellenzelle --&gt;</span>
     &lt;td&gt;21&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
-</code></pre>
+</pre>
+            <div class="tip">
+                <strong>Hinweis:</strong> Nutze Tabellen nur für Daten, nicht für Layout! Für Layout und Design ist CSS zuständig.
+            </div>
         </section>
         <section>
-            <h2>6. Formulare</h2>
-            <pre><code>&lt;form&gt;
-  &lt;label&gt;Name:&lt;input type="text" name="name"&gt;&lt;/label&gt;
+            <h2>8. Formulare</h2>
+            <p>Mit Formularen können Besucher Daten eingeben:</p>
+            <pre>
+&lt;form&gt;
+  &lt;label&gt;Name: &lt;input type="text" name="name"&gt;&lt;/label&gt;
   &lt;input type="submit" value="Absenden"&gt;
 &lt;/form&gt;
-</code></pre>
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Ohne weitere Programmierung passiert beim Absenden noch nichts. Für echte Formulare brauchst du später z.B. JavaScript oder PHP.
+            </div>
         </section>
         <section>
-            <h2>7. Kommentare &amp; Attribute</h2>
-            <ul>
-                <li><code>&lt;!-- Das ist ein Kommentar --&gt;</code></li>
-                <li><code>src</code>, <code>href</code>, <code>alt</code>, <code>class</code>, <code>id</code> sind wichtige Attribute.</li>
-            </ul>
-            <pre><code>&lt;img src="logo.png" alt="Logo" width="200"&gt;</code></pre>
+            <h2>9. Kommentare und Attribute</h2>
+            <p>Kommentare helfen dir, den Code zu verstehen. Attribute geben Elementen Zusatzinfos:</p>
+            <pre>
+&lt;!-- Das ist ein Kommentar, er erscheint nicht auf der Webseite --&gt;
+&lt;a href="seite.html" target="_blank"&gt;Link im neuen Fenster&lt;/a&gt; <span class="kommentar">&lt;!-- target sorgt für neues Tab/Fenster --&gt;</span>
+&lt;img src="logo.png" alt="Logo" width="150"&gt; <span class="kommentar">&lt;!-- Breite in Pixeln --&gt;</span>
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Nutze Kommentare großzügig, um dir Notizen zu machen!
+            </div>
         </section>
         <section>
-            <h2>8. Einbindung von CSS &amp; JavaScript</h2>
-            <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;
-&lt;script src="script.js"&gt;&lt;/script&gt;
-</code></pre>
+            <h2>10. CSS &amp; JavaScript einbinden</h2>
+            <p>Mit CSS gestaltest du deine Seite, mit JavaScript wird sie interaktiv:</p>
+            <pre>
+&lt;link rel="stylesheet" href="style.css"&gt; <span class="kommentar">&lt;!-- CSS für Farben, Layout, Schriften --&gt;</span>
+&lt;script src="script.js"&gt;&lt;/script&gt; <span class="kommentar">&lt;!-- JavaScript für Interaktivität --&gt;</span>
+</pre>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Lege <code>style.css</code> und <code>script.js</code> im gleichen Ordner ab wie deine index.html.
+            </div>
         </section>
         <section>
-            <h2>9. Beispiel: Komplette Mini-Webseite</h2>
-            <pre><code>&lt;!DOCTYPE html&gt;
+            <h2>11. Schritt-für-Schritt Beispiel: Mini-Webseite</h2>
+            <ol>
+                <li>Öffne einen Editor und speichere als <code>index.html</code>.</li>
+                <li>Kopiere folgenden Code hinein:</li>
+            </ol>
+            <pre>
+&lt;!DOCTYPE html&gt;
 &lt;html lang="de"&gt;
   &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Mini-Webseite&lt;/title&gt;
+    &lt;title&gt;Meine erste Webseite&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Crashkurs HTML&lt;/h1&gt;
-    &lt;p&gt;HTML ist einfach zu lernen!&lt;/p&gt;
-    &lt;a href="https://www.w3schools.com"&gt;Mehr lernen&lt;/a&gt;
+    &lt;h1&gt;Willkommen!&lt;/h1&gt;
+    &lt;p&gt;Das ist meine erste eigene HTML-Seite.&lt;/p&gt;
+    &lt;a href="https://www.w3schools.com"&gt;Hier kannst du mehr lernen&lt;/a&gt;
+    &lt;img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools Logo"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Punkt 1&lt;/li&gt;
+      &lt;li&gt;Punkt 2&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- Das ist ein Kommentar, nur für dich sichtbar! --&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</pre>
+            <ol>
+                <li>Speichere ab und öffne die Datei im Browser.</li>
+                <li>Ändere Texte, füge neue Elemente hinzu – experimentiere!</li>
+            </ol>
+            <div class="tip">
+                <strong>Hilfestellung:</strong> Lerne am besten durch Ausprobieren. HTML ist fehlertolerant – der Browser zeigt bei kleinen Fehlern trotzdem etwas an!
+            </div>
         </section>
         <section>
-            <h2>10. Weitere Ressourcen</h2>
+            <h2>12. Nützliche Ressourcen &amp; Übung</h2>
             <ul>
-                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML-Tutorial</a></li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML-Tutorial (Deutsch/Englisch)</a></li>
                 <li><a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank">MDN Web Docs: HTML</a></li>
+                <li>Teste alles selbst: Schreibe eigenen HTML-Code und sieh dir das Ergebnis im Browser an.</li>
+                <li>Frage nach Hilfe in Foren oder bei Freunden, wenn du nicht weiterkommst!</li>
             </ul>
         </section>
     </main>
     <footer>
-        &copy; 2025 HTML Crash Kurs | GitHub Copilot Chat Assistant
+        &copy; 2025 HTML Crash Kurs für Anfänger | GitHub Copilot Chat Assistant
     </footer>
 </body>
 </html>
